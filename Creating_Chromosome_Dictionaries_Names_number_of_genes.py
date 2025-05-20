@@ -89,11 +89,6 @@ for chr in chroms:
     if gene_inf[k]['chr']==chr:
       chrom_count+=1
   gene_counts[chr]=chrom_count
-#%%
-'''
-for each chromosome, I determined the number of associated genes and reported it in the output with this code snippet.
-'''
-gene_counts
 
 #%% Locating identified Genes in Genomic Data
 """
@@ -145,11 +140,6 @@ Now the following variable pulls out the sequence of interest.
 cntn4_seq=seq_dict[hchr][hst:hen]
 #%%
 '''
-Type cntn4_seq at the prompt to see it for yourself (this may take a minute):
-'''
-cntn4_seq
-#%%
-'''
 Any full chromosome sequence might roll off the screen, since most chromosome 
 sequences are very long. However the python string processing function will 
 calculate the length of the gene.
@@ -161,27 +151,18 @@ len(cntn4_seq)
 You can query the genomic information for genes of interest and 
 determine some of their information, like its length and location in the chromosome 
 by using the command >>gene_inf[“gene_identifier”][‘chr’]
-
 after having assigned variables like previous ones. Also, use >> len(“gene_identifier”_seq) 
 to find the amount of basepairs in the desired gene. 
-'''
-'''
-So far we can now use the raw sequence data peek into the genes themselves.
 '''
 #%% Reading the Genome
 '''
 Each sequence is a string of characters now, you can identify specific parts of that gene.  
 '''
 cntn4_seq[5:200]
-
-
 #%%
 '''
-So far you still wouldn’t be able to tell the function of the gene. The following
-steps are to translate the genetic sequence after identifying at which part 
-exactly does the genetic sequence begin.
-
-As you know, the translation of the protein occurs at the start codon, represented 
+The following steps are to translate the genetic sequence after identifying at which part 
+exactly does the genetic sequence begin. The translation of the protein occurs at the start codon, represented 
 by the three  base pairs ATG.  We can identify where translation begins in the gene 
 sequence using the index command, built into the Python string library:
 
@@ -193,14 +174,9 @@ Now let's do it with Matn2
 '''
 Matn2="uc007vll.1"
 #%% 
-gene_inf[Matn2]
-#%%
 hchr=gene_inf[Matn2]['chr']
-#%%
 hst=gene_inf[Matn2]['start']
-#%%
 hen=gene_inf[Matn2]['end']
-#%%
 Matn2_seq=seq_dict[hchr][hst:hen]
 #%%
 '''
@@ -208,7 +184,6 @@ Use the  gene identifier and the previously defined Matn2 sequence, to identify
 the first ten nucleotides in the Matn2 gene by typing:
 '''
 Matn2_seq[0:10]
-
 #%%
 '''
 Also, to identify the index of the translation initiation codon ATG in the Matn2 gene, type:
@@ -216,24 +191,18 @@ Also, to identify the index of the translation initiation codon ATG in the Matn2
 Matn2_seq.index('ATG')
 #%% Genomic Statistics
 """
-
 Here I create data structures. So far it works properly with python 3.12.7
-
 Using the gene_inf dictionary, find out the length of every gene on the four chromosomes collected. 
-
-
 """
 #%%
 """
-Now, 
 First, import the NumPy module to include more complicated math calculations:
 """
 import numpy as np
 #%%
 """
-Now you can find the start and end of each gene, and store the difference:
+Let's find the start and end of each gene, and store the difference:
 """
-
 gene_lengths={}
 for g in gene_inf.keys():
         st=gene_inf[g]['start']
@@ -243,22 +212,7 @@ for g in gene_inf.keys():
 """
 Now Let’s use pyplot's basic plotting tools in matplotlib to create a histogram:
 """
-
 import matplotlib.pyplot as plt
-plt.hist(gene_lengths.values(), bins=50)
-
-#%%
-"""
-You can change the color to green or any other by adding an additional color argument:
-"""
-
-plt.hist(gene_lengths.values(), bins=50, facecolor='green')
-
-#%%
-"""
-For a better view let’s switch to a logarithmic scale:
-"""
-
 plt.hist(gene_lengths.values(), bins=50, log=True, facecolor='green')
 #%%
 """
@@ -269,17 +223,14 @@ max(gene_lengths,key=gene_lengths.get)
 """
 To compare lengths of genes we can call out a gene by its identifier in the dictionary and add or substract it from 
 another gene sequence such as cntn4.
-
 """
 gene_lengths["uc012enb.1"]-len(cntn4_seq)
 
 #%% Beyond the Coding Region
 """
-Now let’s use the gene_inf data structure to count the base pairs in genes compared to those that aren’t in coding regions.
-
+Let’s use the gene_inf data structure to count the base pairs in genes compared to those that aren’t in coding regions.
 By using a set data structure, which stores unique items, you can remove duplicates. To make sure there are no double countings, let’s track the indices, of chromosome x so as not to add in a position in the list of coding regions if they’re already considered in another gene this way.
 """
-
 ingene=set()
 #%%
 """
