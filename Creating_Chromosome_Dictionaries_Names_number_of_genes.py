@@ -11,11 +11,12 @@ email='agarces2381@gmail.com'
 # Sequence Analysis
 Importing necessary packages & Functions
 
-csv will
-gc will
-io will
-zipfile will
+csv will provide functionality for reading and writing tabular data in CSV (Comma Separated Values) format.
+gc will provide an interface to the garbage collector, allowing manual control over memory management.
+io will provide Python's main facilities for handling various types of I/O (input/output), including file I/O, string I/O, and in-memory streams.
+zipfile will allow you to create, read, write, append, and list files in a ZIP archive.
 '''
+
 import csv
 import gc
 import io
@@ -26,10 +27,6 @@ from LoadFASTA_Function import LoadFastaFile, LoadGene, TSSChroms
 
 #%%
 '''
-The data selected is...
-it comes from...
-which maintains genomic information
-
 First I will assign a file name to the variable to work smoothly.
 '''
 
