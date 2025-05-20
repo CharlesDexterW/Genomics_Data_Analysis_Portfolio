@@ -50,28 +50,14 @@ gene_inf=LoadGene(gene_file)
 
 #%%
 '''
-Now you can read the gene names using represented as .keysx
-'''
-gene_inf.keys() 
-
-#%%
-'''
 To access any needed information such as the chromosome and position of 
 the gene on the chromosome, just use brackets like this:
 '''
 gene_inf['uc009auw.1']['chr']
 
-#%%
-gene_inf['uc009auw.1']['start']
-'''
-3238518
-'''
 #%% Evaluating the Data
 '''
-
-How many chromosomes are in this file?
-
-To count the chromosomes we first create a list:
+To count the number of chromosomes we first create a list:
 '''
 
 chroms=[]
@@ -86,21 +72,12 @@ for k in gene_inf.keys():
   if chr not in chroms:
     chroms=chroms+[chr]
 
- 
-#%%
-'''
-Final list of chromosomes. To access it, type:
-'''
-chroms
-
 #%% Counting Genes
 '''
 The gene count can be accessed by navigating through the dictionary of information.
-
 but first, this codeline creates a dictionary to store the relevant information:
 '''
 gene_counts={}
- 
 #%%
 '''
 Now this new dictionary must be filled using two for loops: one for each 
@@ -117,11 +94,11 @@ for chr in chroms:
 for each chromosome, I determined the number of associated genes and reported it in the output with this code snippet.
 '''
 gene_counts
+
 #%% Locating identified Genes in Genomic Data
 """
 With the gene information at hand, the raw gene sequences can be read from the FASTA format. As always, it’s easier to work with these type of files by assigning them to a variable.
 """
-
 fasta_file='selChroms_mm9.fa.zip'
 #%%
 '''
@@ -131,13 +108,7 @@ seq_dict=LoadFastaFile(fasta_file)
 #%%
 '''
 In this dictionary, Chromosomes are individual sequences, which are shown if you type “seq_dict.keys()“
-'''
-seq_dict.keys()
-
-#%%
-'''
 Now, you can start using the gene information within the chromosomes. 
-
 For instance, gene Cntn4, which has was assigned the identifier of 
 uc009dcr.2 by the genome browser:
 '''
@@ -147,10 +118,6 @@ cntn4="uc009dcr.2"
 '''
 Now we can find out the chromosomal location of Cntn4 using our gene_info 
 dictionary to get all the relevant data we collected:
-'''
-gene_inf[cntn4]
-#%%
-'''
 To get the sequence for Cntn4, we need to first figure out what chromosome it 
 is on:
 '''
