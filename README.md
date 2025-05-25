@@ -1,6 +1,6 @@
 # Sequence Analysis Script
  
-So far, the following codeline is able to work with data file formats of known gene chromosomes from UCSC Genome Browser, commonly used to describe genomic features like location and chromosome structures. I have adapted it from materials provided in the MITbiox online program Quantitative Biology Workshop from MIT. I am grateful for the educational resources.
+So far, the following codeline is able to work with data file formats of known gene chromosomes from UCSC Genome Browser, after being curated, commonly used to describe genomic features like location and chromosome structures. I have adapted it from materials provided in the MITbiox online program Quantitative Biology Workshop from MIT. I am grateful for the educational resources.
 
 
 ## Description
@@ -36,7 +36,7 @@ The script relies on the following Python libraries:
 The script requires the following input files:
 
 1.  **Gene Information File (`mm9_sel_chroms_knownGene.txt`)**: A text file containing gene annotations.  This file provides information such as gene identifiers, chromosome locations, and start/end positions.  The file format is specific to the UCSC Genome Browser's knownGene table.
-2.  **FASTA Sequence File (`selChroms_mm9.fa.zip`)**: A ZIP archive containing the genomic sequence data in FASTA format.  The FASTA format is a standard text-based format for representing nucleotide or amino acid sequences.  The sequences are expected to be organized by chromosome.
+2.  **FASTA Sequence File (`selChroms_mm9.fa.zip`)**: A ZIP archive containing the genomic sequence data in FASTA format.  The FASTA format is a standard text-based format for representing nucleotide or amino acid sequences.  The sequences are expected to be organized by chromosome. You have to download it from https://drive.google.com/file/d/1jxOqX3W5Dsdhlr0Q3i2_oeujS7AJ3D2K/view?usp=drive_link
 
 ## How to Use
 
