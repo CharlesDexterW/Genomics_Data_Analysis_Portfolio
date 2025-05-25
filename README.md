@@ -40,4 +40,4 @@ The script requires the following input files:
 
 ## How to Use
 
-The Genome Dictionary file tells what each step in the code does. As per the breaks used in the file, I've written this in Spyder. 
+The Main_file tells what each step in the code does. As per the breaks used in the file, I've written this in Spyder. 
