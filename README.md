@@ -1,7 +1,9 @@
 # Sequence Analysis Script
  
-So far, the following codeline is able to work with data file formats of known gene chromosomes from UCSC Genome Browser, after being curated, commonly used to describe genomic features like location and chromosome structures. I have adapted it from materials provided in the MITbiox online program Quantitative Biology Workshop from MIT, specially the work of Sara JC Gosline. I am grateful for their educational resources.
+## Overview
+This Python script performs a detailed analysis of genomic sequence data, specifically focusing on gene information and chromosomal sequences from the mouse genome (mm9 build). It demonstrates fundamental bioinformatics tasks such as loading genomic data, extracting gene-specific sequences, calculating gene lengths, identifying coding vs. non-coding regions, and searching for regulatory motifs like the TATA box.
 
+This script is ideal to perform basic genomic data handling and analysis using Python.
 
 ## Description
 
